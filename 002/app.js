@@ -78,7 +78,101 @@ home[55] = 'Simas'; // su indeksu pakeicia toj vietoj esancia reiksme (verte), j
 
 console.log(home, home[1], home.length); // viso namo gyventojai, namo pirmame aukste - Simas, namo aukstai(dydis, ilgis, aukstis)
 
-// ispausdina visa array i eilute
+
+// CIKLAI - LOOP
+
+// 1. klasikinis FOR - kai aiskiai zinome, kiek kartu reikes kartoti cikla. Naudojamas masyvui, nes reikia pereiti per visas reiksmes, ir zinome ju baigtini skaiciu.
 for (let i = 0; i < home.length; i++) {
     console.log(home[i]);
 }
+
+// random function - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/*
+  < ---- >=
+  > ---- <=
+  == --- !=
+  && --- ||
+*/
+
+// 2. WHILE - is anksto nezinome, kiek kartu reikes kartoti cikla. Ciklas skaiciuoja nuo 0 iki begalybes
+
+// mociute duoda pinigu ir reikia dirbti bolt
+let bolt = 0;
+const grandma = rand(0, 600);
+bolt = bolt + grandpa;
+console.log('%c' + bolt, 'color:orange;');
+
+while (bolt < 400) {
+    const nightOut = rand(10, 60);
+    bolt += nightOut;
+    console.log('%c' + bolt, 'color:crimson;');
+}
+
+// 3. DO WHILE - is anksto nezinome, kiek kartu reikes kartoti cikla. Ciklas skaiciuoja nuo 1 iki begalybes
+
+// metam moneta, H arba S
+let h = 0;
+
+do {
+    const now = rand(0, 1) ? 'H' : 'S'; // ternary
+    now == 'H' && h++;
+    console.log('%c' + now, 'color:pink;');
+}while(h < 3);
+
+
+// IF - palyginimas, isprendzia ir gauna rezultata: true arba false. 
+
+if (5 > 3) {
+    console.log('%cJa ja', 'color: skyblue;') // ats. Ja Ja, true
+} else {
+    console.log('%cNo no', 'color: yellow;')
+}
+
+/*
+if (7) // vercia i logini kintamaji TRUE
+if (-8) // vercia i logini kintamaji TRUE
+if (0) // vercia i logini kintamaji FALSE (0 yra false)
+https://www.educative.io/answers/what-are-falsy-values-and-truthy-in-javascript
+*/
+
+let A = 2;
+console.log(A++ * ++A);
+// 2 * 4
+
+let a = 1;
+
+if (a-- || a) {
+    console.log('%cJa ja', 'color: skyblue;') // ats. Ja Ja, true
+} else {
+    console.log('%cNo no', 'color: yellow;')
+}
+
+if (a-- && a) {
+    console.log('%cJa ja', 'color: skyblue;') 
+} else {
+    console.log('%cNo no', 'color: yellow;') // ats. No no, false
+}
+
+// ternary ->> salyga ? true : false  vietoj  if(){}else{}    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+
+let b = 2; // 0
+
+b ? console.log('%cJa ja', 'color: skyblue;') : console.log('%cNo no', 'color: yellow;'); // true, jei 0 -> false
+
+
+// AND - &&  OR - ||
+
+// OR grazins pirmaja true value
+let C = 3;
+console.log(C-- || C-- || C-- || C-- || C-- ); // ats. 3
+
+
+// AND grazins pirmaja false value
+let D = 3;
+console.log(D-- && D-- && D-- && D-- && D-- ); // ats. 0
