@@ -87,17 +87,18 @@ for (let i = 0; i < home.length; i++) {
 }
 
 // random function - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// naudojama bet kokiems sveikiems skaiciams paimti (random)
 function rand(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
+    min = Math.ceil(min); // suapvalina iki sveiko skaiciaus i virsu
+    max = Math.floor(max); // suapvalina iki sveiko skaiciaus i apacia
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /*
-  < ---- >=
-  > ---- <=
-  == --- !=
-  && --- ||
+  < ---- >=     --> du skaiciai A ir B, jei A<B, tai nebus (A>B ir A=B) arba A>=B
+  > ---- <=     --> du skaiciai A ir B, jei A>B, tai nebus (A<B ir A=B) arba A<=B
+  == --- !=     --> du skaiciai A ir B, jei A==B, tai nebus A!=B
+  && --- ||     --> du skaiciai A ir B, jei A && B, tai nebus A || B ir atvirksciai
 */
 
 // 2. WHILE - is anksto nezinome, kiek kartu reikes kartoti cikla. Ciklas skaiciuoja nuo 0 iki begalybes
@@ -142,7 +143,7 @@ https://www.educative.io/answers/what-are-falsy-values-and-truthy-in-javascript
 */
 
 let A = 2;
-console.log(A++ * ++A);
+console.log(A++ * ++A); // 
 // 2 * 4
 
 let a = 1;
