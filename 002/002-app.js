@@ -86,12 +86,12 @@ for (let i = 0; i < home.length; i++) {
     console.log(home[i]);
 }
 
-// random function - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-// naudojama bet kokiems sveikiems skaiciams paimti (random)
+// function rand - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// naudojama bet kokiems sveikiems skaiciams paimti
 function rand(min, max) {
     min = Math.ceil(min); // suapvalina iki sveiko skaiciaus i virsu
     max = Math.floor(max); // suapvalina iki sveiko skaiciaus i apacia
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min); // Math.random ima visus skaicius nuo 0 iki 1
 }
 
 /*
@@ -103,9 +103,9 @@ function rand(min, max) {
 
 // 2. WHILE - is anksto nezinome, kiek kartu reikes kartoti cikla. Ciklas skaiciuoja nuo 0 iki begalybes
 
-// mociute duoda pinigu ir reikia dirbti bolt
-let bolt = 0;
-const grandma = rand(0, 600);
+// noriu iseiti out - mociute duoda pinigu ir kiek reikes dirbti bolt
+let bolt = 0; // inicijuoja kintamaji, kurio reiksme bus keiciama
+const grandma = rand(0, 600); // inicijuoja kintamaji, kurio reiksme nebus keiciama
 bolt = bolt + grandpa;
 console.log('%c' + bolt, 'color:orange;');
 
