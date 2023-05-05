@@ -1,0 +1,17 @@
+{
+  "name": "php-zuikiai",
+  "version": "1.0.0",
+  "description": "Labas, Zuikiai!",
+  "main": "index.js",
+  "scripts": {
+    "001-app": "nodemon ./001/001-app.js",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ausra <munduswebstudio@gmail.com> (https://github.com/AusraMundus)",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
