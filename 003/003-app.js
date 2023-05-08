@@ -122,6 +122,88 @@ const arrayGo = (array, fun) => {
 const print1 = p => console.log(`%c ${p}`, 'background:brown; color:white;');
 const print2 = p => console.log('%c ', `background:${p}`);
 
-arrayGo (animals, print1);
-arrayGo(colors, print2);
-arrayGo(colors, print1);
+// arrayGo (animals, print1);
+// arrayGo(colors, print2);
+// arrayGo(colors, print1);
+
+animals.forEach (animal => print1(animal)); // ima masyva, ima po viena elementa, dedam i funkcija ir isskvieciam ka norim padaryti
+animals.forEach (a => console.log(a));
+colors.forEach (c => print2(c)); // c - color
+colors.forEach ((c, i) => console.log(c, i)); // keli kintamieji skliaustuose
+colors.forEach ((_, i) => console.log(i)); // jei reikia visu kintamuju pagal sintakse, bet kode nenorime rodyti visu kintamuju, naudojame vietoj kintamojo -> _
+//colors.forEach (c => print2(c)); // c - color
+
+
+// .map vietoj .forEach
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+// .forEach nesukuria ir negrazina naujo masyvo
+const animals2 = [];
+animals.forEach (a => {
+    animals2.push(a + '***');
+});
+
+console.log(animals2);
+
+// .map sukuria ir grazina nauja masyva. MoDIFIKACIJAI. Netinka ismesti ar prideti elementus
+const animals3 = animals.map (a => a + '***');
+
+console.log(animals3);
+
+const animalColors = [
+    { name:'racoon', color:'crimson', size: 12 },
+    { name:'wolf', color:'pink', size: 42 },
+    { name:'beaver', color:'skyblue', size: 15 },
+    { name:'fox', color:'black', size: 20 }
+];
+
+const animalColorsPlus = animalColors.map (a => ({...a, name: a.name + '+++'}));
+const animalColorsPlusCrimson = animalColorsPlus.map (a => a.color == 'crimson' ? {...a, name: '+++' + a.name} : {...a});
+
+console.log(animalColorsPlus);
+console.log(animalColorsPlusCrimson);
+
+// .filter - naudojamas filtravimui (suradimui) arba trynimui elementu is masyvo
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+const animalsCrimson = animalColors.filter (a => a.color == 'crimson');  // filter
+
+console.log(animalsCrimson);
+
+const animalsWoFox = animalColors.filter (a => a.name != 'fox'); // delete
+
+console.log(animalsWoFox);
+
+// .filter ir .find skirtumas
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+
+const wolfFilter = animalColors.filter (a => a.name == 'wolf'); // filter grazina viena ir daugiau, masyve
+const wolfFind = animalColors.find (a => a.name == 'wolf'); // find grazina viena, pati pirmaji, be masyvo
+
+console.log(wolfFilter);
+console.log(wolfFind); 
+
+// isfiltruoti gyvunai, surandant pagal spalva, ir pakeista spalva
+const doubleAnimal = animalColors.filter(a => a.color == 'crimson').map(a => ({...a, color: 'black'}));
+
+console.log(doubleAnimal);
+
+// .sort - isrusiuoti masyva, nekuria naujo masyvo
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+// https://www.geeksforgeeks.org/sorting-algorithms/
+
+animalColors.sort((a, b) => {
+    if (a.size < b.size) return -1;
+    if (a.size > b.size) return 1;
+    return 0;
+})
+// trumpesnis .sort uzrasymas
+animalColors.sort((a, b) => a - b);
+
+// rusiavimas pagal abecele
+animalColors.sort((a, b) => a.name.localeCompare(b.name));
+animalColors.sort((a, b) => b.name.localeCompare(a.name));
+
+console.log(animalColors);
