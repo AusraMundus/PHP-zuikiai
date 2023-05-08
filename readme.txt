@@ -1,1 +1,1 @@
-Labas, Zuikiai!
+Labas, PHP Zuikiai!

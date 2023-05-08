@@ -4,7 +4,8 @@
   "description": "Labas, Zuikiai!",
   "main": "index.js",
   "scripts": {
-    "002-app": "nodemon ./001/002-app.js",
+    "003-app": "nodemon ./003/003-app.js",
+    "002-app": "nodemon ./002/002-app.js",
     "001-app": "nodemon ./001/001-app.js",
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
