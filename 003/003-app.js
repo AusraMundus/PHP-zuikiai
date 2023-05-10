@@ -147,7 +147,8 @@ animals.forEach (a => {
 
 console.log(animals2);
 
-// .map sukuria ir grazina nauja masyva. MoDIFIKACIJAI. Netinka ismesti ar prideti elementus
+// .map sukuria ir grazina nauja masyva. MODIFIKACIJAI. Netinka ismesti ar prideti elementus
+// ima po viena elementa ir dirba su juo.
 const animals3 = animals.map (a => a + '***');
 
 console.log(animals3);
@@ -166,6 +167,7 @@ console.log(animalColorsPlus);
 console.log(animalColorsPlusCrimson);
 
 // .filter - naudojamas filtravimui (suradimui) arba trynimui elementu is masyvo
+// ima po viena elementa ir tikrina pagal filtro nustatymus
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 const animalsCrimson = animalColors.filter (a => a.color == 'crimson');  // filter
@@ -190,7 +192,8 @@ const doubleAnimal = animalColors.filter(a => a.color == 'crimson').map(a => ({.
 
 console.log(doubleAnimal);
 
-// .sort - isrusiuoti masyva, nekuria naujo masyvo
+// .sort - isrusiuoti masyva, nekuria naujo masyvo.
+// Ima masyvo du narius ir lygina pagal kazkokia savybe
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 // https://www.geeksforgeeks.org/sorting-algorithms/
 
