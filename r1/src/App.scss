@@ -48,3 +48,21 @@
 h2 {
   margin-top: 0;
 }
+
+.sq-bin {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  flex-wrap: wrap;
+  .sq-bin .sq {
+    width: 200px;
+    height: 200px;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 3px;
+    background-color: rgb(172, 171, 171);
+  }
+}

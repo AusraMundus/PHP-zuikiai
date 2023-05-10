@@ -15,5 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
   }
 }
