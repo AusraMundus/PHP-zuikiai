@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <Buttons />
+        <Buttons count={15}/>
 
       </header>
     </div>

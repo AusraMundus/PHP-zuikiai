@@ -1,8 +1,5 @@
-$black: #080708;
-$blue: #3772FF;
-$red: #DF2935;
-$yellow: #FDCA40;
-$gray: #E6E8E6;
+@import './variables.module.scss';
+
 button {
     background-color: $gray;
     border-radius: 12px;
