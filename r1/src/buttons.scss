@@ -19,8 +19,7 @@ button {
     margin: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    &:not(:disabled):hover,
-    &:not(:disabled):focus {
+    &:not(:disabled):hover {
         outline: 0;
         background: darken($gray, 20%);
     }
@@ -32,32 +31,28 @@ button {
     &.black {
         background-color: $black;
         color: white;
-        &:not(:disabled):hover,
-        &:not(:disabled):focus {
+        &:not(:disabled):hover {
             background: lighten($black, 10%);
         }
     }
     &.blue {
         background-color: $blue;
         color: white;
-        &:not(:disabled):hover,
-        &:not(:disabled):focus {
+        &:not(:disabled):hover {
             background: darken($blue, 20%);
         }
     }
     &.red {
         background-color: $red;
         color: white;
-        &:not(:disabled):hover,
-        &:not(:disabled):focus {
+        &:not(:disabled):hover {
             background: darken($red, 20%);
         }
     }
     &.yellow {
         background-color: $yellow;
         color: white;
-        &:not(:disabled):hover,
-        &:not(:disabled):focus {
+        &:not(:disabled):hover {
             background: darken($yellow, 20%);
         }
     }
