@@ -17,10 +17,10 @@ const write = (key, data) => localStorage.setItem(key, JSON.stringify(data));
 export const crudRead = key => read(key);
 
 // CRUD - create(sukurimas)
-export const crudCreate = (key, data) => write(key, {...data, id: uuidv4() });
+export const crudCreate = (key, data) => write(key, [...read(key), {...data, id: uuidv4() }]);
 
-// CRUD - edit (redagavimas)
-export const editCrud = (key, data, id) => write(key, read(key).map(d => d.id === id ? {...d, ...data, id } : {...d }));
+// CRUD - update (redagavimas)
+export const crudEdit = (key, data, id) => write(key, read(key).map(d => d.id === id ? {...d, ...data, id } : {...d }));
 
 // CRUD - delete (naikinimas)
-export const deleteCrud = (key, id) => write(key, read(key).filter(d => d.id !== id));
+export const crudDelete = (key, id) => write(key, read(key).filter(d => d.id !== id));
