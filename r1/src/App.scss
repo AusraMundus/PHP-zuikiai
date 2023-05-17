@@ -1,4 +1,5 @@
 @import './variables.module.scss';
+
 .App {
     text-align: center;
 }
@@ -33,6 +34,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -56,6 +58,7 @@ h2 {
     width: 80%;
     flex-wrap: wrap;
     gap: 20px;
+
     .sq {
         width: 200px;
         height: 200px;
@@ -77,14 +80,17 @@ fieldset {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     legend {
         color: skyblue;
         text-transform: uppercase;
         letter-spacing: 3px;
     }
+
     button {
         margin: 0 10px 0 30px;
     }
+
     input[type="text"] {
         border: none;
         outline: none;
@@ -95,9 +101,11 @@ fieldset {
         padding: 5px;
         margin: 5px;
     }
+
     input[type="range"] {
         width: 375px;
     }
+
     select {
         border: none;
         outline: none;
@@ -109,6 +117,7 @@ fieldset {
         margin: 5px;
         width: 375px;
     }
+
     label {
         cursor: pointer;
         user-select: none;
@@ -118,6 +127,7 @@ fieldset {
         line-height: 30px;
         width: 60px;
         justify-content: flex-start;
+
         &::before {
             content: '\29BE';
             font-size: 30px;
@@ -130,8 +140,10 @@ fieldset {
             padding-right: 30px;
         }
     }
+
     input[type="checkbox"] {
         display: none;
+
         &:checked+label:before {
             content: '\29BF';
             color: skyblue;
@@ -170,9 +182,11 @@ fieldset {
     display: flex;
     align-items: center;
     gap: 10px;
+
     .buttons {
         display: flex;
         gap: 5px;
+
         button {
             margin: 0;
         }
@@ -182,6 +196,7 @@ fieldset {
 .modal {
     display: block;
     background-color: #282c3430;
+
     button:not(.btn) {
         margin: 5px;
     }
@@ -194,26 +209,57 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 5px;
+
     .message {
         padding: 15px 30px;
         border: 1px solid $gray;
         background-color: lighten($gray, 10%);
         border-radius: 3px;
         font-size: 20px;
+
         &.ok {
             border-color: $yellow;
             background-color: lighten($yellow, 10%);
             color: white;
         }
+
         &.info {
             border-color: $blue;
             background-color: lighten($blue, 10%);
             color: white;
         }
+
         &.error {
             border-color: $red;
             background-color: lighten($red, 10%);
             color: white;
+        }
+    }
+}
+
+.list-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .sort-button {
+        width: 30px;
+        height: 30px;
+        background-color: $blue;
+        color: white;
+        display: inline-flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        &:after {
+            content: '\25B2';
+        }
+        &.default::after {
+            content: 'S';
+            font-weight: bold;
+        }
+        &.down::after {
+            transform: rotate(180deg);
         }
     }
 }
