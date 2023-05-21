@@ -1,1 +1,1 @@
-Labas, PHP Zuikiai!
+Labas, PHP Zuikiai! Mokysimės React!

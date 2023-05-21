@@ -1,7 +1,7 @@
 {
-  "name": "php-zuikiai",
+  "name": "react-intro",
   "version": "1.0.0",
-  "description": "Labas, Zuikiai!",
+  "description": "react-intro",
   "main": "index.js",
   "scripts": {
     "003-app": "nodemon ./003/003-app.js",
